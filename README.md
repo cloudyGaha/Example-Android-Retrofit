@@ -1,4 +1,4 @@
-# Andtoid Retrofit2 예제
+# Android Retrofit2 예제
 - 사용 Rest API : https://github.com/iml1111/sejong-univ-auth
 - 사용 Dependency
 ```kotlin
