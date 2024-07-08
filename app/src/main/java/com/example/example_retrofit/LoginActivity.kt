@@ -1,5 +1,6 @@
 package com.example.example_retrofit
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -26,6 +27,7 @@ class LoginActivity : AppCompatActivity() {
         val retrofit = RetrofitClient.getClient()
         apiService = retrofit.create(ApiService::class.java)
 
+        // 로그인 버튼 클릭
         binding.btnLoginLogin.setOnClickListener {
             // 로그인 요청
             val userId = binding.etLoginId.text.toString()
@@ -43,8 +45,18 @@ class LoginActivity : AppCompatActivity() {
                     val loginResponse = response.body()
                     if (loginResponse != null) {
                         if (loginResponse.result.is_auth) {
-                            Toast.makeText(this@LoginActivity, "로그인 성공", Toast.LENGTH_SHORT).show()
+                            // 로그인 성공
+                            val body = loginResponse.result.body
+                            val intent = Intent(this@LoginActivity, MainActivity::class.java).apply {
+                                putExtra("name", body?.name)
+                                putExtra("grade", body?.grade)
+                                putExtra("major", body?.major)
+                                putExtra("status", body?.status)
+//                                putExtra("readCertification", body?.read_certification as HashMap<String, String>)
+                            }
+                            startActivity(intent)
                         } else {
+                            // 로그인 실패
                             Toast.makeText(this@LoginActivity, "로그인 실패: ${loginResponse.result.body.message}", Toast.LENGTH_SHORT).show()
                         }
                     }
