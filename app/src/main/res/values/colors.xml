@@ -2,4 +2,15 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="sejong_crimson_red">#B93234</color>
+    <color name="sejong_crimson_gray">#46515B</color>
+    <color name="sejong_cool_gray">#f1eee2</color>
+    <color name="sejong_ivory">#fffde0</color>
+    <color name="sejong_warm_gray_1">#c8bda7</color>
+    <color name="sejong_warm_gray_2">#715f52</color>
+    <color name="sejong_light_gray">#879196</color>
+    <color name="sejong_yellow">#fdd270</color>
+    <color name="sejong_gold">#8e694c</color>
+    <color name="sejong_silver">#c9c9c9</color>
+
 </resources>
